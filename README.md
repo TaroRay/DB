@@ -1,6 +1,6 @@
 # DB
 Database System
 
-#SQL
+# SQL
 
-#NOSQL
+# NOSQL
