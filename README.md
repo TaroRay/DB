@@ -7,7 +7,7 @@
 # 課程筆記區
 
 # 作業連結區
-  1.  [H.W1](https://colab.research.google.com/drive/1v8OO1qbb4BbCyVENj4zvrMgDNiUxL7oV?usp=sharing)
+  1.  [H.W1](https://github.com/TaroRay/DB/tree/main/HW1)
   2.  [H.W2] 
   3.  [H.W3]
   4.  [H.W4]
