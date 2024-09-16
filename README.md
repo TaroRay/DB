@@ -7,7 +7,7 @@
 # 課程筆記區
 
 # 作業連結區
-  1.  [H.W1]([https://github.com/TaroRay/DB/tree/main/HW1])
+  1.  [H.W1](https://github.com/TaroRay/DB/tree/main/HW1) Note：1.SQL無法匯入，因此透過助教協助從CHAPTGPT上找尋自行建立後端資料庫的程式碼。  2.問題2 :你正在使用 mysql.connector，而你的 MySQL 伺服器使用了 caching_sha2_password 認證插件，但該插件在你使用的 mysql.connector 版本中不受支援。解決方法：pip install --upgrade mysql-connector-python
   2.  [H.W2] 
   3.  [H.W3]
   4.  [H.W4]
