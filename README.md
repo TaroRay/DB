@@ -1,19 +1,7 @@
-# 113-1 師大科技系資料庫系統
-  > 授課教師：蔡芸琤老師
-# 基本資料  
-  * 姓名：**張育瑞**  
-  * 系級：**科技系碩士班四年級**
-  * 學號：**61071031H**
+## Database System EMI
 
-# 課程筆記區
-### Week2
+- Lecture: NTNU TAHRD Yun-Cheng Tsai (Pecu)
 
-# 課堂練習區
-
-# 作業連結區
-H.W 1 
-
-# 專題連結區
-# SQL
-
-# NOSQL
+  - Flask test: app.py
+  - Flask + MySQL test: db.py
+  - Flask + Create Data in MySQL test: create.py
