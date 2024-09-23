@@ -5,6 +5,7 @@
   * 系級：**科技系碩士班四年級**
   * 學號：**61071031H**
 # 課程筆記區
+2024/9/23  API： ngrok
 
 # 作業連結區
   1.  [H.W1](https://github.com/TaroRay/DB/tree/main/HW1)  [Video](https://youtube.com/shorts/ufXtbNpw_DQ?feature=share)
