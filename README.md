@@ -7,8 +7,8 @@
 # 課程筆記區
 2024/9/23  API： ngrok、1.邏輯：read抓creat檔案內容顯示在index中。 修正內容：修改index內容使其符合目標動作，creat改用post指令，所以之前get指令會有問題，需將問題丟給chatgpt修改。 需指向自訂檔案  
 2024/9/30  ngrok：註冊並下載執行檔，在執行檔終端機中輸入ngrok config add-authtoken <token> 終端機會將token註冊到本機中，接著輸入ngrok http 5000表示在本機中執行、https://c337-140-122-91-108.ngrok-free.app/  
-Html模板：live demo
-[Mermaid](https://mermaid.d.foundation/) 利用chatgpt建立create.py, read.py, and delete.py並利用flow & mermaid建立樹狀圖 
+[Mermaid](https://mermaid.d.foundation/) 利用chatgpt建立create.py, read.py, and delete.py並利用flow & mermaid建立樹狀圖  
+Html模板：live demo  
 # 作業連結區
   1.  [H.W1](https://github.com/TaroRay/DB/tree/main/HW1)  [Video](https://youtube.com/shorts/ufXtbNpw_DQ?feature=share)
 HW1 Note：  
