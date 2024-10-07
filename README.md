@@ -10,6 +10,9 @@
 ngrok：註冊並下載執行檔，在執行檔終端機中輸入ngrok config add-authtoken <token> 終端機會將token註冊到本機中，接著輸入ngrok http 5000表示在本機中執行、https://c337-140-122-91-108.ngrok-free.app/  
 [Mermaid](https://mermaid.d.foundation/) 利用chatgpt建立create.py, read.py, and delete.py並利用flow chart & mermaid建立樹狀圖  
 Html模板：live demo  
+2024/10/7  利用app.py連結update、delete、create、read，多一個searchID後也要在app.py裡添加，各個py檔指向的資料庫需要一致。如果要在flask框架下放入網頁圖片需建立在static資料夾下面不然會找不到。搜尋結果需要建立一個新的html並在原來的index加入連結，利用searchID進行判斷
+
+
 # 作業連結區
   1.  [H.W1](https://github.com/TaroRay/DB/tree/main/HW1)  [Video](https://youtube.com/shorts/ufXtbNpw_DQ?feature=share)
 HW1 Note：  
