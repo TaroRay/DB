@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Result</h1>
+
+        {% if post %}
+        <div class="alert alert-success">
+            <strong>Post ID:</strong> {{ post.id }}<br>
+            <strong>Content:</strong> {{ post.post }}
+        </div>
+        {% else %}
+        <div class="alert alert-warning">
+            No post found with the given ID.
+        </div>
+        
+        {% endif %}
+
+        <!-- 回到上一頁的按鈕 -->
+        <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+
+        <!-- 回到首頁的按鈕 -->
+        <a href="{{ url_for('read_bp.index') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>
