@@ -18,7 +18,7 @@ Html模板：live demo
 HW1 Note：  
 1.SQL無法匯入，查詢CHATGPT後可能是TEMP權限問題，但始終無法解決，因此透過助教協助從CHAPTGPT上找尋自行建立後端資料庫的程式碼。  
 2.問題2 :程式使用 mysql.connector，而 MySQL sever使用 caching_sha2_password ， 此 mysql.connector 版本中不支援。解決方法：pip install --upgrade mysql-connector-python  更新外掛的版本終於解決
-  3.  [H.W2](https://github.com/TaroRay/DB/tree/main/1014_Update%26search_ID)  [video]() [ER-diagram]
+  3.  [H.W2](https://github.com/TaroRay/DB/tree/main/1014_Update%26search_ID)  [video]() [ER-diagram](https://github.com/TaroRay/DB/blob/main/ER-Diagram.jpg)
   4.  [H.W3]
   5.  [H.W4]
 # 專題連結區
