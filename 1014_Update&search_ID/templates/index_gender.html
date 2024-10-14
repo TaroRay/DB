@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Gender Management</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Gender</h1>
+        <form action="{{ url_for('create_gender_bp.add_gender_post') }}" method="POST">
+            <div class="form-group">
+                <select class="form-control" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Gender</button>
+        </form>
+
+        <h2>Existing Genders</h2>
+        <form action="{{ url_for('delete_gender_bp.delete_gender_posts') }}" method="POST">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Student ID</th>
+                        <th>Gender</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="student_id" value="{{ post.student_id }}">
+                        </td>
+                        <td>{{ post.student_id }}</td>
+                        <td>
+                            <select name="gender_{{ post.student_id }}" class="form-control" required>
+                                <option value="{{ post.gender }}">{{ post.gender }}</option>
+                                <option value="M">M</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="submit" formaction="{{ url_for('update_gender_bp.update_gender_post', student_id=post.student_id) }}" class="btn btn-success">Update</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-danger">Delete Selected</button>
+        </form>
+
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

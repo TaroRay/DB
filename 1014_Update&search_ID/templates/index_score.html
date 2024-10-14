@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Score Management</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Score</h1>
+        <form action="{{ url_for('create_score_bp.add_score_post') }}" method="POST">
+            <div class="form-group">
+                <input type="number" class="form-control" name="post" placeholder="Enter score" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Score</button>
+        </form>
+
+        <h2>Existing Scores</h2>
+        <form action="{{ url_for('delete_score_bp.delete_score_posts') }}" method="POST">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Student ID</th>
+                        <th>Score</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="student_id" value="{{ post.student_id }}">
+                        </td>
+                        <td>{{ post.student_id }}</td>
+                        <td>
+                            <input type="text" name="post_{{ post.student_id }}" class="form-control" value="{{ post.score }}" required>
+                        </td>
+                        <td>
+                            <button type="submit" formaction="{{ url_for('update_score_bp.update_score_post', student_id=post.student_id) }}" class="btn btn-success">Update</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-danger">Delete Selected</button>
+        </form>
+
+         </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

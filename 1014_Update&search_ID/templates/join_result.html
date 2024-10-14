@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>合併結果</h1>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Post</th>
+                    <th>Score</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in merged_data %}
+                <tr>
+                    <td>{{ row.student_id }}</td>
+                    <td>{{ row.post }}</td>
+                    <td>{{ row.score }}</td>
+                    <td>{{ row.gender }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- 回到首頁的按鈕 -->
+        <a href="{{ url_for('read_bp.index') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>
