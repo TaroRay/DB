@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Data</title>
+    <style>
+        /* 設定背景從黃色到藍色的線性漸層 */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, yellow, blue);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        input[type="text"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        /* 設定按鈕樣式 */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create a New Entry</h1>
+    <form action="{{ url_for('create') }}" method="POST">
+        請輸入姓名: <input type="text" name="name"><br>
+        請輸入座號: <input type="text" name="number"><br>
+        請輸入成績: <input type="text" name="description"><br>
+        <input type="submit" value="Create">
+    </form>
+    
+    <!-- 使用 class="button" 將連結顯示為按鈕樣式 -->
+    <a href="{{ url_for('index') }}" class="button">Go Home</a>
+</body>
+</html>
