@@ -20,5 +20,5 @@ HW1 Note：
 2.問題2 :程式使用 mysql.connector，而 MySQL sever使用 caching_sha2_password ， 此 mysql.connector 版本中不支援。解決方法：pip install --upgrade mysql-connector-python  更新外掛的版本終於解決
   3.  [H.W2](https://github.com/TaroRay/DB/tree/main/1014_Update%26search_ID)  [Video](https://youtu.be/7EL8gIfzrGc) [MYSQLWorkbench](https://youtu.be/bSnRVC_4QzE)  [ER-diagram](https://github.com/TaroRay/DB/blob/main/ER-Diagram.jpg)
   5.  [H.W3](https://github.com/TaroRay/DB/tree/main/1028_noSQL) [Video](https://youtu.be/C4uuo4k-KIg)  
-  6.  [H.W4]
+  6.  [H.W4](https://github.com/TaroRay/DB/tree/main/1118noSQL%20%E4%B8%89%E6%AE%B5%E8%80%83%E7%89%88%E6%9C%AC) [Video](https://youtu.be/Emd2j1jdj8Q)
 # 專題連結區
