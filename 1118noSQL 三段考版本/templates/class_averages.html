@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全班平均分數</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>全班段考平均分數</h1>
+    <table border="1">
+        <tr>
+            <th>段考次數</th>
+            <th>平均分數</th>
+        </tr>
+        <tr>
+            <td>第一次段考</td>
+            <td>{{ class_averages.first_avg }}</td>
+        </tr>
+        <tr>
+            <td>第二次段考</td>
+            <td>{{ class_averages.second_avg }}</td>
+        </tr>
+        <tr>
+            <td>第三次段考</td>
+            <td>{{ class_averages.third_avg }}</td>
+        </tr>
+    </table>
+
+    <!-- 加入長條圖 -->
+    <canvas id="averageChart" width="400" height="300"></canvas>
+    <script>
+        const ctx = document.getElementById('averageChart').getContext('2d');
+        const chartData = {
+            labels: ['第一次段考', '第二次段考', '第三次段考'],
+            datasets: [{
+                label: '平均分數',
+                data: [
+                    {{ class_averages.first_avg|tojson }},
+                    {{ class_averages.second_avg|tojson }},
+                    {{ class_averages.third_avg|tojson }}
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const averageChart = new Chart(ctx, {
+            type: 'bar',  // 指定圖表類型為長條圖
+            data: chartData,
+            options: {
+                responsive: false, // 禁用自動調整大小
+                maintainAspectRatio: false, // 允許自定義比例
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <a href="/">回首頁</a>
+</body>
+</html>

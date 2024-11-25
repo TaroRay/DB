@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平均成績統計</title>
+</head>
+<body>
+    <h1>三次段考平均成績</h1>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th>平均成績</th>
+        </tr>
+        {% for avg in averages %}
+        <tr>
+            <td>{{ avg.name }}</td>
+            <td>{{ avg.average }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">回首頁</a>
+</body>
+</html>
