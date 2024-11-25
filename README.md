@@ -22,4 +22,4 @@ HW1 Note：
   5.  [H.W3](https://github.com/TaroRay/DB/tree/main/1028_noSQL) [Video](https://youtu.be/C4uuo4k-KIg)  
   6.  [H.W4](https://github.com/TaroRay/DB/tree/main/1118noSQL%20%E4%B8%89%E6%AE%B5%E8%80%83%E7%89%88%E6%9C%AC) [Video](https://youtu.be/Emd2j1jdj8Q)
 # 專題連結區
-[Final project](https://github.com/TaroRay/DB/tree/main/1118noSQL%20%E4%B8%89%E6%AE%B5%E8%80%83%E7%89%88%E6%9C%AC))
+[Final project](https://github.com/TaroRay/DB/tree/main/1118noSQL%20%E4%B8%89%E6%AE%B5%E8%80%83%E7%89%88%E6%9C%AC)
