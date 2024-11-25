@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Log</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 隱藏詳細內容的樣式 */
+        .content {
+            display: none;
+        }
+        .toggle-btn {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        /* 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        /* 編輯和刪除按鈕樣式 */
+        .edit-btn, .delete-btn {
+            padding: 5px 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .edit-btn {
+            background-color: #007bff;
+        }
+        .edit-btn:hover {
+            background-color: #8645a0;
+        }
+        .delete-btn {
+            background-color: #ff4c4c;
+        }
+        .delete-btn:hover {
+            background-color: #d10000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Startup Log</h1>
+
+    <!-- 搜尋表單 -->
+    <form action="{{ url_for('search') }}" method="POST">
+        <input type="text" name="query" placeholder="搜尋名稱或描述...">
+        <button type="submit">搜尋</button>
+    </form>
+
+    <!-- 切換顯示所有資料 -->
+    <form action="{{ url_for('show_all') }}" method="GET" style="display: inline;">
+        <button type="submit">{{ '顯示全部' if not show_all else '隱藏全部' }}</button>
+    </form>
+
+    <!-- 僅在搜尋結果存在時顯示回到上一頁按鈕 -->
+    {% if results %}
+        <button onclick="history.back()">回到上一頁</button>
+    {% endif %}
+
+    <!-- 結果顯示區 -->
+    <h2>{{ '搜尋結果' if results else '全部資料' }}</h2>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>座號</th>
+            <th>第一次段考</th>
+            <th>第二次段考</th>
+            <th>第三次段考</th>
+            <th>操作</th>
+            
+            
+            <!-- 新增操作欄位 -->
+        </tr>
+        {% if results %}
+            {% for item in results %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.number }}</td>
+                    <td>{{ item.first }}</td>
+                    <td>{{ item.second }}</td>
+                    <td>{{ item.third }}</td>
+                    <td>
+                        <!-- 編輯按鈕 -->
+                        <a href="{{ url_for('update.update', id=item._id) }}">
+                            <button class="edit-btn">編輯</button>
+                        </a>
+                        <!-- 刪除按鈕 -->
+                        <form action="{{ url_for('delete.delete', id=item._id) }}" method="POST" style="display: inline;">
+                            <button class="delete-btn" onclick="return confirm('確認刪除此項目嗎？')">刪除</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.number }}</td>
+                    <td>{{ item.first }}</td>
+                    <td>{{ item.second }}</td>
+                    <td>{{ item.third }}</td>
+                    <td>
+                        <!-- 編輯按鈕 -->
+                        <a href="{{ url_for('update.update', id=item._id) }}">
+                            <button class="edit-btn">編輯</button>
+                        </a>
+                        <!-- 刪除按鈕 -->
+                        <form action="{{ url_for('delete.delete', id=item._id) }}" method="POST" style="display: inline;">
+                            <button class="delete-btn" onclick="return confirm('確認刪除此項目嗎？')">刪除</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+
+    <br>
+    <a href="{{ url_for('create') }}">Create New Entry</a>
+    
+    <a href="/average">
+        <button type="button">統計平均成績</button>
+    </a>
+    <a href="/class_averages">
+        <button type="button">全班平均分數</button>
+    </a>
+    <script>
+        // jQuery to toggle the visibility of the content
+        $(document).ready(function(){
+            $('.toggle-btn').click(function(){
+                $(this).next('.content').toggle();
+                // Change the text of the button based on visibility
+                if ($(this).next('.content').is(':visible')) {
+                    $(this).text('[Hide Details]');
+                } else {
+                    $(this).text('[Show Details]');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
